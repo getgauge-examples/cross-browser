@@ -44,12 +44,24 @@ mvn test
 This runs the sample specs using the firefox driver by default. To run tests in Chrome browser, pass the `-Dwebdriver.chrome.driver="<path_to_chrome_driver>"` flag to selenium node.
 Then run specs using `mvn test -Denv="chrome"`
 
-To use a different browser, set the environment property `BROWSER` in `project_dir/env/user.properties`.
+To run the specs in android Web view of a physical android device, follow steps as [here](http://selendroid.io/setup.html#launchingSelendroid).
+Launch selendroid-standalone as below, the jar is included in `resources` directory of this repository(if needed).
 
 ```
-BROWSER = chrome
+java -jar <path_to_selenroid_standalone_jar> -host <IP_of_selenium_hub> -hub <path_to_node_register> -port <port_for_selendroid>
 ```
 
+Example:
+
+```
+java -jar selendroid-standalone-0.17.0-with-dependencies.jar -host localhost -hub http://localhost:4444/grid/register -port 4445
+```
+
+Run specs
+
+```
+mvn gauge:execute -Denv=android
+```
 
 
 

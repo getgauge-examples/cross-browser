@@ -4,7 +4,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
-import java.net.MalformedURLException;
 import java.net.URL;
 
 public class DriverFactory {
@@ -13,17 +12,18 @@ public class DriverFactory {
     public static WebDriver getDriver() {
         DesiredCapabilities capabilities = DesiredCapabilities.firefox();
         String browser = System.getenv("BROWSER");
-        if (browser == null)  {
-            capabilities.setBrowserName("firefox"); //default
-        }
+        String selenium_hub_ip = System.getenv("SELENIUM_HUB_IP");
 
-        capabilities.setBrowserName(browser);
-        capabilities.setCapability("takesScreenshot", "true");
         RemoteWebDriver driver = null;
         try {
-            String selenium_hub_ip = System.getenv("SELENIUM_HUB_IP");
+            if (browser.equals("android")) {
+                capabilities = DesiredCapabilities.android();
+            } else {
+                capabilities.setBrowserName(browser);
+                capabilities.setCapability("takesScreenshot", "true");
+            }
             driver = new RemoteWebDriver(new URL(selenium_hub_ip), capabilities);
-        } catch (MalformedURLException e) {
+        }  catch (Exception e) {
             e.printStackTrace();
         }
         return driver;

@@ -3,3 +3,5 @@ logs/
 out/
 *.iml
 reports/
+.gauge/*
+.idea/*
