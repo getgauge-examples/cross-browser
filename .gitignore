@@ -1,7 +1,12 @@
 target/
-logs/
-out/
-*.iml
+.gauge/
 reports/
-.gauge/*
-.idea/*
+out/
+logs/
+gauge_bin/
+libs/
+.idea
+.gradle/
+*.iml
+build/
+*.log

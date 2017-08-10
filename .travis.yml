@@ -1,0 +1,26 @@
+language: java
+sudo: required
+dist: trusty
+
+env:
+  - BROWSER=chrome
+  - BROWSER=firefox
+
+before_install:
+  - docker run -d -p 4446:4444 --name selenium-hub -P selenium/hub
+  - docker run -d -P -e no_proxy=localhost -e HUB_ENV_no_proxy=localhost --link selenium-hub:hub selenium/node-chrome
+  - docker run -d -P -e no_proxy=localhost -e HUB_ENV_no_proxy=localhost --link selenium-hub:hub selenium/node-firefox
+
+install:
+  - sudo apt-key adv --keyserver hkp://pool.sks-keyservers.net --recv-keys 023EDB0B
+  - echo deb https://dl.bintray.com/gauge/gauge-deb stable main | sudo tee -a /etc/apt/sources.list
+  - sudo apt-get update
+  - sudo apt-get install gauge
+  - gauge install
+
+cache:
+  directories:
+  - $HOME/.m2
+
+script:
+  - mvn clean test
