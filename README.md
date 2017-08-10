@@ -1,6 +1,6 @@
 ## Cross-browser
 
-[![Build Status](https://travis-ci.org/sguptatw/cross-browser.svg?branch=master)](https://travis-ci.org/sguptatw/cross-browser)
+[![Build Status](https://travis-ci.org/getgauge-examples/cross-browser.svg?branch=master)](https://travis-ci.org/getgauge-examples/cross-browser)
 
 This is an example to set up Selenium Grid(for cross browser) on CI for a Gauge project that uses Selenium as the driver to interact with a web browser.
 
