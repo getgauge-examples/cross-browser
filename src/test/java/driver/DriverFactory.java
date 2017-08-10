@@ -24,6 +24,10 @@ public class DriverFactory {
         String browser = System.getenv("BROWSER");
         browser = (browser == null) ? "CHROME": browser;
 
+        System.out.println("****************");
+        System.out.println(browser);
+        System.out.println("****************");
+
         DesiredCapabilities desiredCapabilities;
         switch (browser) {
             case "IE":
