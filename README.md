@@ -7,8 +7,8 @@ This is an example to set up [Selenium Grid](http://www.seleniumhq.org/docs/07_s
 **Working of the Travis configuration**
 
 On ubuntu OS, we have
-* Docker(https://docs.docker.com/engine/installation/#supported-platforms)
-* JDK(http://www.oracle.com/technetwork/java/javase/downloads/index.html)
+* [Docker](https://docs.docker.com/engine/installation/#supported-platforms)
+* [JDK](http://www.oracle.com/technetwork/java/javase/downloads/index.html)
 
 `Before the installation` Selenium hub and nodes are initialized
 * docker run -d -p 4446:4444 --name selenium-hub -P selenium/hub
