@@ -2,11 +2,10 @@
 
 [![Build Status](https://travis-ci.org/getgauge-examples/cross-browser.svg?branch=master)](https://travis-ci.org/getgauge-examples/cross-browser)
 
-This is an example to set up Selenium Grid(for cross browser) on CI for a Gauge project that uses Selenium as the driver to interact with a web browser.
+This is an example to set up [Selenium Grid](http://www.seleniumhq.org/docs/07_selenium_grid.jsp)(for cross browser) on [Travis CI](https://travis-ci.org/). This is a [Gauge](https://getgauge.io/) project that uses [Selenium](http://www.seleniumhq.org/) as the webdriver.
 
-The CI configuration used is the travis configuration. The set up uses docker for starting the selenium hub and registering nodes to it.
+**Working of the Travis configuration**
 
-**Working of Travis.yml**
 On ubuntu OS, we have
 * Docker(https://docs.docker.com/engine/installation/#supported-platforms)
 * JDK(http://www.oracle.com/technetwork/java/javase/downloads/index.html)
